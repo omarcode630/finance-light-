@@ -19,6 +19,7 @@
    font-family: "DM Sans", sans-serif;
    font-family: "Inter", sans-serif;
    text-transform: capitalize;
+   background-color: #F6F6F6;
  }
  
  .container {
@@ -54,18 +55,20 @@
 /* backdrop-filter: blur(5px); */
 } 
 .header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* padding: 40px; */
-  flex-wrap: wrap;
-  position: relative;
-  /* max-width: 100%; */
-  /* height: 52px; */
-  max-width: 100%;
-  padding-top:20px;
-  /* this code for testing */
-  overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 40px; */
+    flex-wrap: wrap;
+    position: relative;
+    /* max-width: 100%; */
+    /* height: 52px; */
+    max-width: 100%;
+    /* padding-top: 20px; */
+    overflow: hidden;
+    /* margin: 20px auto 20px auto; */
+    padding-top: 20px;
+    padding-bottom: 20px;
   
  }
  @media (max-width: 991px) {
@@ -76,7 +79,10 @@
  }
  @media (max-width: 767px) {
      .header .container {
-       margin-top: 18px;
+        margin-top: 18px;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 20px;
 }
  }
  /* justify-content: space-evenly; */
@@ -161,15 +167,17 @@
 } */
 .header .button button {
   color: var(--Primary-Dark, #1D1C20);
-  font-family: "DM Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 19.2px;
-  width: 136px;
-  height: 50px;
-  border-radius: 64px;
-  border: 1px solid #3B3B3B;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.2px;
+    width: 136px;
+    height: 50px;
+    border-radius: 64px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3B3B3B #3B3B3B transparent;
 }
  @media (max-width: 767px) {
     .header .button button {
@@ -181,13 +189,22 @@
 /* end header */
 /* start finance */
 .finance {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 14px;
+  padding-bottom: 62.3px;
+  position: relative;
 }
 @media (max-width: 991px) {
   .finance {
     padding-top: 80px;
   }
+}
+.finance::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.8px;
+  background-color: #E0E0E0;
+  top: 20px;
 }
 .finance .container {
      display: flex;
@@ -197,7 +214,7 @@
 }
 .finance .ai {
   width: 263px;
-  height: 34px;
+  height: 33px;
   border-radius: 32px;
   border: 1px solid #364C09;
   display: flex;
@@ -205,11 +222,13 @@
   justify-content: center;
   position: relative;
   border-bottom-color: transparent;
-  margin-bottom: -40px;
+  /* padding-top: 108px; */
+  margin-top: 108px;
 }
 @media (max-width: 991px) {
   .finance .ai{
     width: 40%;
+    margin-top: -6px;
   }
 }
 .finance .ai button {
@@ -245,118 +264,129 @@
   right: 9px;
 }
 .finance .content {
+  margin: 14px;
   text-align: center;
   max-width: 100%;
-  /* ? */
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 .finance .content h1 {
-  color: var(--Primary-Dark, #1D1C20);
-  text-align: center;
-  font-family: "DM Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 84px;
-  width: 1088px;
-  margin-bottom: -6px;
+    color: var(--Primary-Dark, #1D1C20);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 84px;
+    width: 1088px;
+    letter-spacing: 0;
+    height: 186px;
+    /* this padding is not clearly in design */
+    padding-top: 14px;
+  
 
 }
 @media (max-width: 991px) {
   .finance .content h1 {
-    width: 400px;
-    font-size: 40px;
-    line-height: 1.1;
-    padding-top: 40px;
+    width: 450px;
+    font-size: 44px;
+    line-height: 1.6;
+    padding-top: 5px;
   }
 }
 
 .finance .content p {
-color: var(--Gray-3, #828282);
-text-align: center;
-font-family: "DM Sans";
-font-size: 22px;
-font-style: normal;
-font-weight: 400;
-line-height: 36px; /* 163.636% */
+    color: var(--Gray-3, #828282);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    height: 72px;
+    letter-spacing: 0;
+    margin-top: 15px;
+    
  
 }
 @media (max-width: 991px) {
   .finance .content p {
-           font-size: 20px;
+        font-size: 22px;
         line-height: 1.1;
-        padding-top: 7px;
+        margin-top: -45px;
   }
 }
 
 .finance .content .demo {
  position: relative;
- 
-}
-@media (max-width: 991px) {
-  .finance .content .demo {
-          padding-top: 13px;
-        width: 50%;
-  }
-}
-.finance .content .demo input {
-width: 640px;
-height: 72px;
-flex-shrink: 0;
-border-radius: 100px;
-background: #FFF;
-border: 1px solid #fff;
- 
+ margin-top: 56px;
 }
 
-.finance .content .demo input::placeholder {
- color: #7C7C7C;
-text-align: center;
-font-family: "DM Sans";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 30px; /* 166.667% */
-position: absolute;
-left: 20px;
-}
-.finance .content .demo button {
-    width: 176px;
-    height: 60px;
+.finance .content .demo input {
+    width: 640px;
+    height: 72px;
     flex-shrink: 0;
     border-radius: 100px;
-    background: var(--Primary-Dark, #1D1C20);
-    position: absolute;
-    right: 5px;
-    color: #FFF;
-    text-align: center;
-    font-family: "DM Sans";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 30px;
-    /* transform: translateY(-50%); */
-    top: 5px;
+    background: #FFF;
+    border: 1px solid transparent;
+   position: relative;
+}
+
+.finance .content .demo input[type="text"]::placeholder {
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  opacity: 1;
+  font-family: "DM Sans";
+  font-weight: 400;
+  /*thisstylenameindesigninregylar*/font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+  /*166.667%*/letter-spacing: 0px;
+  text-align: center;
+  color: #7C7C7C;
+  z-index: 12;
+  left: 20px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.finance .content .demo button {
+  width: 176px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: var(--Primary-Dark, #1D1C20);
+  position: absolute;
+  right: 5px;
+  color: #FFF;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  transform: translateY(11%);
 }
 @media (max-width: 991px) {
  .finance .content .demo button {
-    width: 36%;
-    height: 35px;
-    top: 36px;
+    width: 32%;
+    height: 63px;
+    top: -2px;
     font-size: 18px;
     font-weight: normal;
-    font-style: italic;   
+    font-style: italic;
     color: var(--secondery-color);
  
-;   
+   
   }
 }
 
 .finance .review-block {
-  margin-top: 35px;
+  margin-top: 62.3px;
     text-align: center;
   }
   @media (max-width: 991px) {
@@ -367,9 +397,14 @@ left: 20px;
 }
  
   .finance .avatars {
-    display: flex;
+   display: flex;
     justify-content: center;
-    margin-bottom: 8px;
+    /* in desine the margin is 8px put it dont matching the desien */
+    margin-bottom: 20px;
+    height: 40px;
+    min-width: 100px;
+    min-height: 40px;
+    padding: 4px 10px;
   }
 .finance .avatar {
     width: 40px;
@@ -385,41 +420,53 @@ left: 20px;
     margin-left: 0;
   }
   .finance .review-text {
-  color: var(--Gray-3, #828282);
-  font-family: "DM Sans";
-  font-size: 13.891px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 16px; /* 115.186% */
-  }
+    color: var(--Gray-3, #828282);  
+    font-size: 13.891px;
+    width: 162px;
+    height: 16px;
+    font-family: Dm Sans;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 16px;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+  
 /* end finance */
 
 /* start revenue */
 .revenue {
- 
-  border-radius: 20px;
-  background: var(--Gray-6, #F2F2F2);
-  box-shadow: 2px 10px 81px -8px rgba(0, 0, 0, 0.14);
+margin-top: 62.7px;
+    /* border-radius: 20px; */
+    /* background: var(--Gray-6, #F2F2F2); */
+    /* box-shadow: 2px 10px 81px -8px rgba(0, 0, 0, 0.14); */
+   
 }
 .revenue .container {
-   display: grid;
+  display: grid;
   grid-template-areas:
-  "total-pr total-pr total-pr total-re  total-re total-re total-so total-so total-so"
+  "total-pr total-pr total-pr total-re total-re total-re total-so total-so total-so"
   "total-ba total-ba total-img total-img total-img total-img total-img en en";
-  grid-template-rows: 180px 470px ;
+  grid-template-rows: 180px 470px;
   gap: 27.75px;
-   max-width: 1536px;
+  max-width: 1536px;
   height: 747px;
- padding: 62.7px 0 0 0;
+  padding: 38px 29px 39px 30px;
+  width: 1536px;
+  height: 747px;
+  opacity: 1;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  box-shadow: 2px 10px 81px -8px #00000024;
 }
 @media (max-width: 1199px) {
   .revenue .container {
-    
+     grid-template-columns: repeat(auto-fit, 286px);
   }
 }
 @media (max-width: 767px) {
   .revenue .container {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
 
   }
 }
@@ -721,12 +768,9 @@ line-height: normal;
   border-radius: 7px;
   background: var(--Gray-3, #828282);
 }
- 
-/* end revenue */
+/* end revenue  */
 /* start center-links */
 .center-links {
-  padding-top: 100px;
-  padding-bottom: 200px;
   /* position: sticky; */
   top: 0;
   z-index: 1001;
@@ -734,10 +778,11 @@ line-height: normal;
 }
 .center-links .container {
   padding: 48px 10px 10px 10px;
-  box-shadow: 13px -20px 9px 20px #a3dc2f,
+  border-image: linear-gradient(90.75deg, rgba(255, 255, 255, 0.6) 0%, rgba(163, 220, 47, 0.6) 100%) 1;
+  /* box-shadow: 13px -20px 9px 20px #a3dc2f,
   2px 20px 20px 13px #bed58f,
-  -20px 3px 20px 20px #a3dc2f;
-  background-color: #a2dc2f94;
+  -20px 3px 20px 20px #a3dc2f; */
+  /* background-color: #a2dc2f94; */
   width: 571px;
   height: 117px;
 }
@@ -777,28 +822,35 @@ font-weight: 500;
 line-height: normal;
 }
 /* end center-links */
-/* start opt-expense */
 .opt-expense {
- padding-top: 100px;
- padding-bottom: 100px;
+ padding-top: 142px;
+ /* padding-bottom: 100px; */
 }
+/* container */
 .opt-expense .container {
-display: grid;
-  grid-template-areas:
-  "one one one  two two two two two two  three three  three"
-  "four four four four four four  five five five five five five";
-  grid-template-rows: 470px 470px ;
-  gap: 30px;
+    display: grid;
+    grid-template-areas:
+    "one one one two two two two two two three three three"
+    "four four four four four four five five five five five five";
+    grid-template-rows: 470px 470px;
+    gap: 30px;
+    width: 1501px;
+    height: 1022px;
+    /* i use this two codes to solve the gab in bottom of section design */
+    justify-content: space-between;
+    align-content: space-between;
 }
 .opt-expense  .container .box-one {
-  grid-area: one;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 30px;
-  border: 1px solid var(--Gray-4, #BDBDBD);
-  background: #FFF;
+    grid-area: one;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid var(--Gray-4, #BDBDBD);
+    background: #FFF;
+    width: 352px;
+    height: 496px;
  
 }
 .opt-expense  .container .box-one p {
@@ -869,16 +921,18 @@ position: relative;
     background-color: transparent;
 }
 .opt-expense  .container .box-two {
-  grid-area: two;
-  display: flex;
-  padding: 32px 37px 24px 37px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-  align-self: stretch;
-  border-radius: 30px;
-  border: 1px solid var(--Gray-4, #BDBDBD);
-  background: #FFF;
+    grid-area: two;
+    display: flex;
+    padding: 32px 37px 24px 37px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    align-self: stretch;
+    border-radius: 30px;
+    border: 1px solid var(--Gray-4, #BDBDBD);
+    background: #FFF;
+    width: 734px;
+    height: 496px;
  
 }
 .opt-expense  .container .box-two p {
@@ -916,14 +970,22 @@ background: #FFF;
   
 }
 .opt-expense  .container .box-three p {
-    max-width: 298.68px;
-    color: var(--Gray-1, #333);
-    text-align: center;
-    font-family: "DM Sans";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22.4px; /* 140% */
+  max-width: 298.68px;
+  color: var(--Gray-1, #333);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  height: 81px;
+  max-width: 298.68px;
+  font-family: dm sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 22.4px;
+  letter-spacing: 0px;
+  vertical-align: middle;
 }
 .opt-expense  .container .box-three .team-images {
  position: relative;
@@ -1280,7 +1342,7 @@ content: "";
 /* start review */
 .review {
   padding-top: calc(var(--section-padding) * 2);
-  padding-bottom: calc(var(--section-padding) * 3 - 8px);
+  /* padding-bottom: calc(var(--section-padding) * 3 - 8px); */
   background: var(--Gray-6, #F2F2F2);
  
 }
@@ -1365,14 +1427,38 @@ content: "";
   grid-template-columns: repeat(3, 660px);
   grid-template-rows: repeat(1, 313px);
   column-gap: 30px;
+  position: relative;
+  left: 192px;
+
 }
+
 .review .review-card .one,
 .review .review-card .two,
 .review .review-card .three {
   border-radius: 20px;
   background: #FFF;
   position:relative;
+   width: 660px;
+    height: 313px;
   }
+.review .review-card .three { 
+  width: 660px;
+  height: 313px;
+  position: relative;
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+ .review .review-card .three::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F2F2F2;
+  width: 38%;
+  height: 100%;
+} 
 .review .review-card .one p,
 .review .review-card .two p,
 .review .review-card .three p {
@@ -1475,6 +1561,9 @@ margin-top: 33px;
 .review .arrow {
   display: inline-flex;
   margin-top: 86px;
+  margin-bottom: 146px;
+  position: relative;
+  right: 54px;
 }
 .review .arrow .left-side {
   width: 60px;
@@ -1512,8 +1601,6 @@ margin-top: 33px;
   left: 21px;
 }
 /* end review */
-
-/* end opt-expense */
 /* start plans */
 .plans {
   padding-top: calc(var(--section-padding) + 20px);
@@ -1534,14 +1621,14 @@ margin-top: 33px;
   position: relative
 }
 .plans .container .main-heading .bottom  {
-     width: 89px;
-    height: 33.568px;
-    position: relative;
-    bottom: 15.432px;
-    border-radius: 32px;
-    border: 1px solid #364C09;
-    left: 50%;
-    transform: translateX(-50%);
+  width: 89px;
+  height: 33px;
+  position: relative;
+  bottom: 16px;
+  border-radius: 32px;
+  border: 1px solid #364C09;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .plans .container .main-heading .bottom::before  {
   content: "\f02b";
@@ -1571,7 +1658,7 @@ margin-top: 33px;
     background-color: transparent;
 }
 .plans .container .main-heading  h2  {
-  max-width: 728px;
+  width: 1067px;
   color: var(--Primary-Dark, #1D1C20);
   text-align: center;
   font-family: "DM Sans";
@@ -1586,9 +1673,9 @@ margin-top: 33px;
 .plans .container .main-heading  p  {
   display: flex;
   height: 92px;
-  flex-direction: column;
-  justify-content: center;
-  align-self: stretch;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-self: stretch; */
   color: var(--Gray-1, #333);
   text-align: center;
   font-family: "DM Sans";
@@ -1596,13 +1683,14 @@ margin-top: 33px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
+  margin-top: 16px;
   margin-bottom: 55px;
-    
+
 }
 .plans .cards {
   display: grid;
   grid-template-columns: repeat(3, 399px);
-  grid-template-rows:  788px;
+  grid-template-rows: 791px;
   column-gap: 32px;
 }
 @media (max-width: 1200) {
@@ -1624,6 +1712,9 @@ background: #F4F4F4;
 position: relative;
  
 }
+.plans .cards .pro {
+  padding: 72px 40px 40px;
+}
 .plans .cards .basic h3,
 .plans .cards .pro h3,
 .plans .cards .Enterprise h3
@@ -1637,6 +1728,9 @@ font-style: normal;
 font-weight: 400;
 line-height: 38.4px; /* 120% */
 margin: 72px 40px 24px;
+}
+.plans .cards .pro h3 {
+
 }
 .plans .cards .basic > p ,
 .plans  .cards .pro   > p ,
@@ -1739,9 +1833,9 @@ content: "";
 
 }
 .plans .cards .pro  .first-bottom {
-  position: relative;
-  left: 248px;
-  top: -44px;
+  position: absolute;
+  right: 23.5px;
+  top: 24.5px;
   /* margin: 24.5px 24px 0 0; */
   width: 93.84px;
   height: 32.8px;
@@ -1807,7 +1901,7 @@ content: "";
   line-height: 21.2px;
   /* margin: 0 60.33px 33.56px 40px; */
   position: absolute;
-  bottom: 97px;
+  bottom: 62px;
   left: 2px;
   border-radius: 64px;
   background: var(--Primary-Dark, #1D1C20);
@@ -1816,7 +1910,7 @@ content: "";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 19.2px; /* 120% */
+  line-height: 19.2px;
 }
 .plans .cards .Enterprise .boutton  button {
   display: flex;
@@ -1933,22 +2027,26 @@ background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 /* end finances-ex */
 /* starting footer */
 .footer {
-  display: flex;
-width: 1920px;
-height: 474px;
-padding: 98px 10px 0 10px;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10px;
+  
 }
 .footer .container{
-  width: 1637px;
-  padding: 47px 0;
-  display: flex;
- justify-content: space-between;;
-  align-items: self-start;
-  gap: 46px;
+       /* display: flex
+; */
+    width: 1920px;
+    /* height: 474px; */
+    padding: 98px 10px 0 10px;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* width: 1637px; */
+    padding: 47px 0;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: self-start;
+    gap: 46px;
+    padding: 98px 141px 0 141px;
 }
 
 .footer .container .col-one {
@@ -2114,14 +2212,12 @@ line-height: 22px; /* 137.5% */
     border: none;
 }
 
-
-
 /* start col-five */
 .footer   hr {
   background: #BDBDBD;
   width: 1637px !important;
   height: 1px;
-  margin: 46px 0 ;
+  margin: 46px auto 46px auto;
 }
 .footer .col-five {}
 .footer .col-five p {
